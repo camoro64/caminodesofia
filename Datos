@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Juego de Cartas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    input, button {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Juego de Cartas</h1>
+  <input type="number" id="casilla" placeholder="Introduce número de casilla" min="1">
+  <button onclick="verificarCasilla()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    const casillas = {
+      "1": "prueba",
+      "2": "acertijo",
+      "3": "puzzle",
+      "4": "prueba",
+      "5": "acertijo",
+      "6": "puzzle"
+    };
+
+    function verificarCasilla() {
+      const numeroCasilla = document.getElementById('casilla').value;
+      const resultado = casillas[numeroCasilla];
+      document.getElementById('resultado').innerText = resultado ? `Debes coger una carta de ${resultado}` : 'Casilla no válida';
+    }
+  </script>
+</body>
+</html>
